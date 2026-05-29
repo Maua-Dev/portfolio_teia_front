@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: Overpass;
+    src: url("assets/font/Overpass-Regular.ttf");
+}
+
+@theme{
+    --font-overpass: Overpass, "sans-serif";
+}
