@@ -19,9 +19,7 @@ export default function Home() {
         This prevents the 3 columns from stretching excessively on large screens, 
         creating large, elegant outer side margins.
       */}
-      <div className="w-full max-w-[1000px] mx-auto">
-        <h1 className="text-2xl font-bold mb-8 text-white">Meu Pinterest Clone</h1>
-        
+      <div className="w-full max-w-[1000px] mx-auto">        
         {/* columns-3 gap-8: Forces a strict 3-column layout using CSS Columns. 
           The gap-8 property creates a distinct, wide spacing between the columns.
         */}
