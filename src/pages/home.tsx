@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CardLayout from '../components/card_pictures/card_picture_layout';
+import CardPictureLayout from '../components/card_pictures/card_picture_layout';
 import { buscarCardsAleatorios, type CardData } from '../data/cards_picture';
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
         */}
         <div className="columns-3 gap-8 w-full">
           {cards.map((card) => (
-            <CardLayout 
+            <CardPictureLayout 
               key={card.id}
               image={card.image} 
               dimension={card.dimension} 
