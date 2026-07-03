@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-interface CardProps {
+interface CardPictureProps {
   image: string;
   dimension: 'small' | 'medium' | 'large';
 }
@@ -26,7 +26,7 @@ const getHeight = (dimension: 'small' | 'medium' | 'large'): number => {
   return heights[dimension] || heights.medium;
 };
 
-export default function CardLayout({ image, dimension }: CardProps) {
+export default function CardPictureLayout({ image, dimension }: CardPictureProps) {
   /* * useMemo is CRITICAL here: It memorizes the random height calculation.
    * Without it, the card would recalculate a new height on EVERY re-render,
    * causing the layout to dangerously jump or flicker when the state updates.
@@ -41,7 +41,7 @@ export default function CardLayout({ image, dimension }: CardProps) {
        * break-inside-avoid: Essential for CSS Columns; prevents the card 
        * from being split or torn in half across columns.
        */
-      className="w-full mb-8 break-inside-avoid overflow-hidden rounded-3xl bg-zinc-800"
+      className="w-full mb-8 break-inside-avoid overflow-hidden rounded-3xl"
     >
       <img 
         src={image} 

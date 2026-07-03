@@ -10,7 +10,7 @@ export default function Header(){
                 <img src={logo_teia} alt="logo_teia_criativa" onClick={() => navigate("/")} className="cursor-pointer max-h-full"/>
                 
                 <div onClick={() => navigate("/")} className="font-overpass cursor-pointer">Home</div>
-                <div onClick={() => navigate("#")} className="font-overpass cursor-pointer">Membros</div>
+                <div onClick={() => navigate("/members")} className="font-overpass cursor-pointer">Membros</div>
                 <div onClick={() => navigate("/about")} className="font-overpass cursor-pointer">Sobre nós</div>
                 <div onClick={() => navigate("#")} className="font-overpass cursor-pointer">Contato</div>
                 <div onClick={() => navigate("#")} className="font-overpass cursor-pointer">pt/en</div>
