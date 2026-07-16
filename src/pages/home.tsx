@@ -62,6 +62,7 @@ export default function Home() {
                   key={card.id}
                   image={card.image} 
                   dimension={card.dimension} 
+                  hover={card.hover} // Passes the painting title dynamically for the hover overlay
                 />
               ))}
             </div>
