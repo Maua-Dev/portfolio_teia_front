@@ -1,17 +1,25 @@
 import { useState, useEffect } from 'react';
 import CardPictureLayout from '../components/card_pictures/card_picture_layout';
-import { buscarCardsAleatorios, type CardData } from '../data/cards_picture';
 import Carousel from '../components/carousel/carousel.tsx';
 import { HiMagnifyingGlass, HiArrowDownRight } from "react-icons/hi2";
 
-export default function Home() {
-  // State to store the array of cards that will be rendered on the screen
-  const [cards, setCards] = useState<CardData[]>([]);
+import { obterPinturasHome } from '../data/cards_filter.ts';
+import { type PictureCardData } from '../types/cards';
 
-  // Runs once when the component mounts to fetch and set the initial randomized cards
+export default function Home() {
+  // Strict typing for picture objects
+  const [cards, setCards] = useState<PictureCardData[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch and process pictures with Pinterest dimensions on mount
   useEffect(() => {
-    const dadosGerados = buscarCardsAleatorios();
-    setCards(dadosGerados);
+    obterPinturasHome()
+      .then((pinturas) => {
+        setCards(pinturas);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -26,7 +34,7 @@ export default function Home() {
           <HiMagnifyingGlass className="text-gray-500" />
           <input placeholder="Search..." className="bg-transparent border-none focus:outline-none" />  
         </div>
-        <section className="flex gap-2">
+        <section className="flex gap-2 cursor-pointer">
           <div className="px-4 bg-gray-300 text-gray-700 rounded-full"> 
             Limpar filtros</div>
           
@@ -39,29 +47,29 @@ export default function Home() {
       </div>
       {/*End of Filter Tab*/}
 
-      {/*Card Dislpay*/} 
+      {/*Card Display*/} 
       <div className="py-4 px-4 min-h-screen w-full">
-        
-        {/* max-w-[1000px] mx-auto: Restricts the grid's maximum width and centers it. 
-          This prevents the 3 columns from stretching excessively on large screens, 
-          creating large, elegant outer side margins.
-        */}
         <div className="w-[97%] mx-auto">        
-          {/* columns-3 gap-8: Forces a strict 3-column layout using CSS Columns. 
-            The gap-8 property creates a distinct, wide spacing between the columns.
-          */}
-          <div className="columns-3 gap-8 w-full">
-            {cards.map((card) => (
-              <CardPictureLayout 
-                key={card.id}
-                image={card.image} 
-                dimension={card.dimension} 
-              />
-            ))}
-          </div>
+          
+          {loading ? (
+            <div className="text-white text-center py-12 text-lg">
+              Carregando galeria...
+            </div>
+          ) : (
+            <div className="columns-3 gap-8 w-full">
+              {cards.map((card) => (
+                <CardPictureLayout 
+                  key={card.id}
+                  image={card.image} 
+                  dimension={card.dimension} 
+                />
+              ))}
+            </div>
+          )}
+          
         </div>
       </div>
-      {/*End of Card Dislpay*/}
+      {/*End of Card Display*/}
     </div>
   );
 }
