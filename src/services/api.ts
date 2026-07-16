@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://127.0.0.1:8000/api'; // Switch to the .env file once you have the official backend link. 
+const API_BASE_URL = 'http://localhost:8000/api'; // Switch to the .env file once you have the official backend link. 
 
 /**
  * Generic helper function to handle API HTTP requests in a standardized way.
