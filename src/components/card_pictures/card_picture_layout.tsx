@@ -37,7 +37,7 @@ export default function CardPictureLayout({ image, dimension, hover }: CardPictu
 
       {/* 2. Aplique a classe do styles aqui também */}
       <div 
-        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.figmaGlassEffect}`}
+        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.GlassEffect}`}
       >
         <span className="text-zinc-800 font-bold text-base truncate">
           {hover}

@@ -1,5 +1,5 @@
 import { cardsService } from '../services/api';
-import { type PictureCardData, type MemberCardData } from '../types/cards';
+import type { PictureCardData, MemberCardData } from '../types/cards';
 
 /**
  * Service to fetch and process picture cards for the Home page Pinterest grid.

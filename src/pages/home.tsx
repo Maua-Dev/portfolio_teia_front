@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import CardPictureLayout from '../components/card_pictures/card_picture_layout';
-import Carousel from '../components/carousel/carousel.tsx';
+import Carousel_image from '../components/carousel/carousel_image.tsx';
 import { HiMagnifyingGlass, HiArrowDownRight } from "react-icons/hi2";
 
 import { obterPinturasHome } from '../data/cards_filter.ts';
-import { type PictureCardData } from '../types/cards';
+import type { PictureCardData } from '../types/cards';
 
 export default function Home() {
   // Strict typing for picture objects
@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div>  
       {/*Carousel*/}
-      <Carousel />
+      <Carousel_image />
       {/*End of Carousel*/}
 
       {/*Filter Tab*/}

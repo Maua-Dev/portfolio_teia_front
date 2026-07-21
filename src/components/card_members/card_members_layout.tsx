@@ -17,7 +17,7 @@ export default function CardMambersLayout({ image, name = "Member" }: MemberCard
 
       {/* 2. Aplique a classe usando styles.figmaGlassEffect */}
       <div 
-        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.figmaGlassEffect}`}
+        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.GlassEffect}`}
       >
         <span className="text-zinc-900 font-bold text-base truncate">
           {name}

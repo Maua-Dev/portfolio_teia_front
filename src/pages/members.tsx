@@ -11,7 +11,7 @@ import CardMambersLayout from "../components/card_members/card_members_layout";
 
 // Data and Type imports
 import { obterMembrosPagina } from '../data/cards_filter';
-import { type MemberCardData } from '../types/cards';
+import type { MemberCardData } from '../types/cards';
 
 export default function Members() {
   // Strict typing for member objects

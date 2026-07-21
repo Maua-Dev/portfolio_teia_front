@@ -6,7 +6,7 @@ import img4 from "../../assets/test_carousel/grlas.jpg";
 
 const slides = [img1, img2, img3, img4];
 
-export default function Carousel() {
+export default function Carousel_Image() {
   const [current, setCurrent] = useState(0);
 
   function goToPrev() {
@@ -29,13 +29,13 @@ export default function Carousel() {
 
       <button
         onClick={goToPrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl px-2 select-none"
+        className="absolute left-2 top-1/2 -translate-y-1/2 text-white text-3xl px-2 select-none cursor-pointer"
       >
         ‹
       </button>
       <button
         onClick={goToNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-3xl px-2 select-none"
+        className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-3xl px-2 select-none cursor-pointer"
       >
         ›
       </button>
