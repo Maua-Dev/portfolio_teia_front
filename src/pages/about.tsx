@@ -15,20 +15,19 @@ interface TimelineItem {
 // Carousel icons
 import CarouselIconsLayout, { type IconCardItem } from '../components/carousel/carousel_icons_layout';
 
-// Import de mais ícones do Lucide para expandir o carrossel
+// Import additional Lucide icons to expand the carousel
 import { 
   StickyNotes, 
   Users, 
   PenTool,
   Factory  
-
 } from 'lucide-react';
 
 export default function About(){
     const Cards: IconCardItem[] = [
         {
             id: 1,
-            icon: <Factory  className="w-12 h-12" />,
+            icon: <Factory className="w-12 h-12" />,
             message: 'Produção',
         },
         {
@@ -38,7 +37,7 @@ export default function About(){
         },
         {
             id: 3,
-            icon: <PenTool   className="w-12 h-12" />,
+            icon: <PenTool className="w-12 h-12" />,
             message: 'Design Visual',
         },
         {
@@ -71,7 +70,7 @@ export default function About(){
     ];
     
     return(
-        <>
+        <main>
             <Banner 
                 image={member_banner}
                 altText="Members banner"
@@ -130,7 +129,7 @@ export default function About(){
                     Para garantir que seus projetos se materializem com profissionalismo, a equipe é dividida em frentes estratégicas:
                 </p>
 
-                {/* Passando os dados para o layout */}
+                {/* Pass data to the layout component */}
                 <CarouselIconsLayout items={Cards} />
             </section>
 

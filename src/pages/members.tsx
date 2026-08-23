@@ -67,6 +67,6 @@ export default function Members() {
           
         </div>
       </section>
-    </section>
+    </main>
   );
 }

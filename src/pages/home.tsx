@@ -57,8 +57,8 @@ export default function Home() {
           )}
           
         </div>
+        {/*End of Card Display*/}
       </div>
-      {/*End of Card Display*/}
-    </div>
+    </main>
   );
 }
