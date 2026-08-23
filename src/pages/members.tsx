@@ -13,6 +13,8 @@ import CardMambersLayout from "../components/card_members/card_members_layout";
 import { obterMembrosPagina } from '../data/cards_filter';
 import type { MemberCardData } from '../types/cards';
 
+import Filter from '../components/filter/filter.tsx';
+
 export default function Members() {
   // Strict typing for member objects
   const [membros, setMembros] = useState<MemberCardData[]>([]);
@@ -38,6 +40,11 @@ export default function Members() {
         image={member_banner}
         altText="Members banner"
       />
+      
+      <Filter 
+            clear={"Limpar Filtro"}
+            year={"Ano"}
+            category={"Categoria"}/>
 
       <section className="pt-4 w-full">
         <div className="w-full max-w-[1400px] mx-auto px-4">
