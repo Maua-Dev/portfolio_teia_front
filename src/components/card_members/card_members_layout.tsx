@@ -1,63 +1,13 @@
 import card_style from "../../../public/card_hover.module.css"
 
-interface cardMemberItem{
-  id: string;
-  url_image: string;
-  message_hover: string;
-}
-
-const card_member: cardMemberItem[] = [
-  {
-    id: "member-1",
-    url_image: "https://picsum.photos/id/64/500/500",
-    message_hover: "José Silva"
-  },
-  {
-    id: "member-2",
-    url_image: "https://picsum.photos/id/91/500/500",
-    message_hover: "Maria Souza"
-  },
-  {
-    id: "member-3",
-    url_image: "https://picsum.photos/id/338/500/500",
-    message_hover: "Carlos Eduardo"
-  },
-  {
-    id: "member-4",
-    url_image: "https://picsum.photos/id/342/500/500",
-    message_hover: "Ana Clara"
-  },
-  {
-    id: "member-5",
-    url_image: "https://picsum.photos/id/646/500/500",
-    message_hover: "Lucas Oliveira"
-  },
-  {
-    id: "member-6",
-    url_image: "https://picsum.photos/id/649/500/500",
-    message_hover: "Juliana Mendes"
-  },
-  {
-    id: "member-7",
-    url_image: "https://picsum.photos/id/668/500/500",
-    message_hover: "Gabriel Santos"
-  },
-  {
-    id: "member-8",
-    url_image: "https://picsum.photos/id/669/500/500",
-    message_hover: "Beatriz Rocha"
-  },
-  {
-    id: "member-9",
-    url_image: "https://picsum.photos/id/696/500/500",
-    message_hover: "Felipe Costa"
-  }
-];
+/* Importando Mock */
+import type { CardMember } from "../../data/card_member_mock"; // Props
+import { card_member } from "../../data/card_member_mock"; // mock
 
 export default function CardMambersLayout() {
   return (
     <>
-      {card_member.map((member) => (
+      {card_member.map((member: CardMember) => (
         <div
           key={member.id}
           className="group relative break-inside-avoid mb-5 rounded-3xl overflow-hidden shadow-sm hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
