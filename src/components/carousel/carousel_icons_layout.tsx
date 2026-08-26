@@ -36,7 +36,7 @@ export default function CarouselIconsLayout({ items: initialItems }: CarouselIco
     <div className="flex items-center justify-between w-full gap-4 py-6">
       {/* Botão Esquerda */}
       <button 
-        onClick={handlePrev}
+        onClick={handleNext}
         className="p-2 text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer z-10 shrink-0"
         aria-label="Anterior"
       >
@@ -66,7 +66,7 @@ export default function CarouselIconsLayout({ items: initialItems }: CarouselIco
 
       {/* Botão Direita */}
       <button 
-        onClick={handleNext}
+        onClick={handlePrev}
         className="p-2 text-white/80 hover:text-white transition-all active:scale-95 cursor-pointer z-10 shrink-0"
         aria-label="Próximo"
       >

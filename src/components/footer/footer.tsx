@@ -7,7 +7,7 @@ export default function Footer(){
 
     return(
         <footer
-            className="w-full text-white"
+            className="w-full text-white mt-[100px]"
             style={{
                 backgroundImage: `url(${bg_colored_bg})`,
                 backgroundSize: "100% 300%",

@@ -23,41 +23,42 @@ export default function Home() {
   }, []);
 
   return (
-    <div>  
-      {/*Carousel*/}
-      <Carousel_image />
-      {/*End of Carousel*/}
-
-      {/*Filter*/}
-      <Filter 
-      clear={"Limpar Filtro"}
-      year={"Ano"}
-      category={"Categoria"}/>
-      {/*End of Filter*/}
+    <main>
+      <div>
+        {/*Carousel*/}
+        <Carousel_image />
+        {/*End of Carousel*/}
+        {/*Filter*/}
+        <Filter
+        clear={"Limpar Filtro"}
+        year={"Ano"}
+        category={"Categoria"}/>
+        {/*End of Filter*/}
       
-      {/*Card Dislpay*/} 
-      <div className="py-4 px-4 min-h-screen w-full">
-        <div className="w-[97%] mx-auto">        
-          
-          {loading ? (
-            <div className="text-white text-center py-12 text-lg">
-              Carregando galeria...
-            </div>
-          ) : (
-            <div className="columns-3 gap-8 w-full">
-              {cards.map((card) => (
-                <CardPictureLayout 
-                  key={card.id}
-                  image={card.image} 
-                  dimension={card.dimension} 
-                  hover={card.hover} // Passes the painting title dynamically for the hover overlay
-                />
-              ))}
-            </div>
-          )}
-          
+        {/*Card Dislpay*/}
+        <div className="py-4 px-4 min-h-screen w-full">
+          <div className="w-[97%] mx-auto">
+      
+            {loading ? (
+              <div className="text-white text-center py-12 text-lg">
+                Carregando galeria...
+              </div>
+            ) : (
+              <div className="columns-3 gap-8 w-full">
+                {cards.map((card) => (
+                  <CardPictureLayout
+                    key={card.id}
+                    image={card.image}
+                    dimension={card.dimension}
+                    hover={card.hover} // Passes the painting title dynamically for the hover overlay
+                  />
+                ))}
+              </div>
+            )}
+      
+          </div>
+          {/*End of Card Display*/}
         </div>
-        {/*End of Card Display*/}
       </div>
     </main>
   );
