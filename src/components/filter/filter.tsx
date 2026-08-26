@@ -8,7 +8,7 @@ type filter = {
 
 export default function Filter({clear, year, category}: filter){
     return(
-          <div className="w-[97%] flex justify-between h-7 mx-auto mt-3 gap-2 rounded-lg px-3"> 
+          <div className="flex justify-between h-7 mx-auto mt-5 mb-5 gap-2 rounded-lg px-3"> 
             <div className="px-4 bg-gray-300 rounded-full flex items-center">
               <HiMagnifyingGlass className="text-gray-500" />
               <input placeholder="Search..." className="bg-transparent border-none focus:outline-none" />  
