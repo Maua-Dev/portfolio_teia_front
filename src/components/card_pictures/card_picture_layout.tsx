@@ -95,7 +95,7 @@ export default function CardPictureLayout() {
   }, []);
 
   return (
-    <div>
+    <>
       {cardsRandomWithHeight.map((picture) => (
         <div 
           key={picture.id} 
@@ -119,6 +119,6 @@ export default function CardPictureLayout() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }
