@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import card_style from '../../../public/card_hover.module.css';
+import card_style from "../../styles/card_hover.module.css"
 
 /* Importando Mock */
 import { card_picture } from '../../data/card_picture_mock'; // mock

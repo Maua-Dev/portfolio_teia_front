@@ -1,4 +1,4 @@
-import card_style from "../../../public/card_hover.module.css"
+import card_style from "../../styles/card_hover.module.css"
 
 /* Importando Mock */
 import type { CardMember } from "../../data/card_member_mock"; // Props
