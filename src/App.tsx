@@ -6,6 +6,7 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import About from "./pages/about";
 import Members from "./pages/members";
+import ProjectPage from "./pages/projectpage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
               <Route path="/members" element={<Members />} />
+              <Route path="/projectpage/:id" element={<ProjectPage />} />
             </Routes>
           <Footer />
       </BrowserRouter>

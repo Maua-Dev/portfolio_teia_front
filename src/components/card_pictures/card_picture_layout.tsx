@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import card_style from "../../styles/card_hover.module.css"
+import { useNavigate } from 'react-router-dom';
 
 /* Importando Mock */
 import { card_picture } from '../../data/card_picture_mock'; // mock
@@ -8,6 +9,9 @@ import { card_picture } from '../../data/card_picture_mock'; // mock
 function getRandomHeight(min = 230, max = 540) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+
+  
 
 export default function CardPictureLayout() {
   // Memoizes the array calculation to prevent re-shuffling and height re-computation on component re-renders
@@ -21,12 +25,19 @@ export default function CardPictureLayout() {
         height: getRandomHeight(230, 540), // Adds the dynamic height
       }));
   }, []);
+  
+  const navigate = useNavigate();
 
+  
   return (
     <>
       {cardsRandomWithHeight.map((picture) => (
         <div 
           key={picture.id} 
+          onClick={() => {
+            navigate(`/projectpage/${picture.id}`);
+            window.scrollTo(0, 0);
+          }}
           className="group relative break-inside-avoid mb-5 rounded-3xl overflow-hidden shadow-sm hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
           style={{ height: `${picture.height}px` }}
         >
