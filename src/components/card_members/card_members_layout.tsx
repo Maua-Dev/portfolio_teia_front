@@ -1,28 +1,32 @@
-// 1. Importe como um objeto 'styles'
-import card_style from '../../../public/card_hover.module.css'; // CSS
+import card_style from "../../styles/card_hover.module.css"
 
-interface MemberCardProps {
-  image: string;
-  name?: string;
-}
+/* Importando Mock */
+import type { CardMember } from "../../data/card_member_mock"; // Props
+import { card_member } from "../../data/card_member_mock"; // mock
 
-export default function CardMambersLayout({ image, name = "Member" }: MemberCardProps){
-  return(
-    <div className="relative w-full aspect-square overflow-hidden rounded-3xl bg-zinc-800 shadow-md group cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-2xl transform-gpu">
-      <img 
-        src={image} 
-        alt={name}
-        className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-      />
-
-      {/* 2. Aplique a classe usando styles.figmaGlassEffect */}
-      <div 
-        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.GlassEffect}`}
-      >
-        <span className="text-zinc-900 font-bold text-base truncate">
-          {name}
-        </span>
-      </div>
-    </div>
+export default function CardMambersLayout() {
+  return (
+    <>
+      {card_member.map((member: CardMember) => (
+        <div
+          key={member.id}
+          className="group relative break-inside-avoid mb-5 rounded-3xl overflow-hidden shadow-sm hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
+        >
+          <img 
+            src={member.url_image}
+            alt={member.message_hover}
+            className="w-full h-full object-cover rounded-3xl"
+          />
+          {/* Hover overlay */}
+          <div
+            className={`absolute bottom-0 inset-x-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${card_style.GlassEffect}`}
+          >
+            <p className="font-overpass text-gray-900 font-bold text-base">
+              {member.message_hover}
+            </p>
+          </div>
+        </div>
+      ))}
+    </>
   );
 }

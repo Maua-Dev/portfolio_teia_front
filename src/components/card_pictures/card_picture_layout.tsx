@@ -1,48 +1,63 @@
 import { useMemo } from 'react';
+import card_style from "../../styles/card_hover.module.css"
+import { useNavigate } from 'react-router-dom';
 
-import card_style from '../../../public/card_hover.module.css'; // CSS 
+/* Importando Mock */
+import { card_picture } from '../../data/card_picture_mock'; // mock
 
-interface CardPictureProps {
-  image: string;
-  dimension: 'small' | 'medium' | 'large';
-  hover: string; 
-}
-
-function getRandomHeight(min: number, max: number): number {
+// Function to generate a random height
+function getRandomHeight(min = 230, max = 540) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const getHeight = (dimension: 'small' | 'medium' | 'large'): number => {
-  const heights = {
-    small: getRandomHeight(230, 260),
-    medium: getRandomHeight(330, 360),
-    large: getRandomHeight(510, 540),
-  };
-  return heights[dimension] || heights.medium;
-};
 
-export default function CardPictureLayout({ image, dimension, hover }: CardPictureProps) {
-  const cardHeight = useMemo(() => getHeight(dimension), [dimension]);
+  
 
+export default function CardPictureLayout() {
+  // Memoizes the array calculation to prevent re-shuffling and height re-computation on component re-renders
+  const cardsRandomWithHeight = useMemo(() => {
+    return [...card_picture] // Mock list copy
+      .sort(() => Math.random() - 0.5) // Randomly shuffles the list order
+      // ex: 0.2: 0.2 - 0.5 = -0.3 (Negative number -> swaps order)
+      // ex: 0.8: 0.8 - 0.5 = +0.3 (Positive number -> keeps order)
+      .map((picture) => ({ // Maps over the picture array
+        ...picture, // Copies all card properties
+        height: getRandomHeight(230, 540), // Adds the dynamic height
+      }));
+  }, []);
+  
+  const navigate = useNavigate();
+
+  
   return (
-    <div 
-      style={{ height: `${cardHeight}px` }}
-      className="relative isolate w-full mb-8 break-inside-avoid overflow-hidden rounded-3xl cursor-pointer group transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-2xl transform-gpu"
-    >
-      <img 
-        src={image} 
-        className="absolute inset-0 w-full h-full object-cover -z-10" 
-        alt={hover} 
-      />
+    <>
+      {cardsRandomWithHeight.map((picture) => (
+        <div 
+          key={picture.id} 
+          onClick={() => {
+            navigate(`/projectpage/${picture.id}`);
+            window.scrollTo(0, 0);
+          }}
+          className="group relative break-inside-avoid mb-5 rounded-3xl overflow-hidden shadow-sm hover:scale-[1.02] transition-transform duration-300 cursor-pointer"
+          style={{ height: `${picture.height}px` }}
+        >
+          {/* Main image */}
+          <img 
+            src={picture.url_image} 
+            alt={picture.message_hover} 
+            className="w-full h-full object-cover rounded-3xl"
+          />
 
-      {/* 2. Aplique a classe do styles aqui também */}
-      <div 
-        className={`absolute -bottom-[1px] -left-[1px] -right-[1px] h-16 rounded-b-3xl flex items-center px-6 transition-all duration-300 ease-out opacity-0 group-hover:opacity-100 ${card_style.GlassEffect}`}
-      >
-        <span className="text-zinc-800 font-bold text-base truncate">
-          {hover}
-        </span>
-      </div>
-    </div>
+          {/* Hover overlay */}
+          <div 
+            className={`absolute bottom-0 inset-x-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${card_style.GlassEffect}`}
+          >
+            <p className="font-overpass text-gray-900 font-bold text-base">
+              {picture.message_hover}
+            </p>
+          </div>
+        </div>
+      ))}
+    </>
   );
 }
