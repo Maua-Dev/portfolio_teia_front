@@ -14,7 +14,7 @@ export default function ProjectPage() {
     );
   }
 
-  const { capa, obras, titulo, texto, autor, categorias } = project;
+  const { capa, obras, titulo, texto, author, categorias } = project;
   const [primeiraObra, ...restoObras] = obras;
 
   return (
@@ -65,7 +65,7 @@ export default function ProjectPage() {
 
       {/* Tags de autores */}
       <div className="flex flex-wrap gap-3">
-        {autor.map((nome, index) => (
+        {author.map((nome, index) => (
           <div
             key={index}
             className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 bg-gray-50"

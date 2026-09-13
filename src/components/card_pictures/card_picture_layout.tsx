@@ -1,36 +1,41 @@
 import { useMemo } from 'react';
-import card_style from "../../styles/card_hover.module.css"
+import card_style from "../../styles/card_hover.module.css";
 import { useNavigate } from 'react-router-dom';
 
-/* Importando Mock */
-import { card_picture } from '../../data/card_picture_mock'; // mock
+/* Importando Mock e Tipos */
+import { card_picture } from '../../data/card_picture_mock';
+import type { CardPictureItem } from '../../data/card_picture_mock';
 
-// Function to generate a random height
 function getRandomHeight(min = 230, max = 540) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// Interface para Props (memberName é opcional)
+interface CardPictureFilterLayoutProps {
+  memberName?: string;
+}
 
-  
-
-export default function CardPictureLayout() {
-  // Memoizes the array calculation to prevent re-shuffling and height re-computation on component re-renders
-  const cardsRandomWithHeight = useMemo(() => {
-    return [...card_picture] // Mock list copy
-      .sort(() => Math.random() - 0.5) // Randomly shuffles the list order
-      // ex: 0.2: 0.2 - 0.5 = -0.3 (Negative number -> swaps order)
-      // ex: 0.8: 0.8 - 0.5 = +0.3 (Positive number -> keeps order)
-      .map((picture) => ({ // Maps over the picture array
-        ...picture, // Copies all card properties
-        height: getRandomHeight(230, 540), // Adds the dynamic height
-      }));
-  }, []);
-  
+export default function CardPictureLayout({ memberName }: CardPictureFilterLayoutProps) {
   const navigate = useNavigate();
+
+  // Filter and add a random height
+  const cardsRandomWithHeight = useMemo(() => {
+    // If memberName exists, filter the author's works. Otherwise, get all of them.
+    const filteredPictures = memberName
+      ? card_picture.filter((picture) => picture.author.includes(memberName))
+      : card_picture;
+
+    return [...filteredPictures]
+      .sort(() => Math.random() - 0.5)
+      .map((picture: CardPictureItem) => ({
+        ...picture,
+        height: getRandomHeight(230, 540),
+      }));
+    }, [memberName]); // Recalculates if the memberName prop changes
 
   
   return (
-    <>
+    <section>
       {cardsRandomWithHeight.map((picture) => (
         <div 
           key={picture.id} 
@@ -58,6 +63,6 @@ export default function CardPictureLayout() {
           </div>
         </div>
       ))}
-    </>
+    </section>
   );
 }

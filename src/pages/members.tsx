@@ -23,9 +23,7 @@ export default function Members() {
           category={"Categoria"}
         />
 
-        <section className="grid grid-cols-4 gap-5">
-          <CardMambersLayout />
-        </section>
+        <CardMambersLayout />
         
       </main>
   );

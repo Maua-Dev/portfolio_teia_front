@@ -18,69 +18,161 @@ import twelve from "../assets/Cards/member/12.jpg"
 export interface CardMember{
     id: string;
     url_image: string;
-    message_hover: string;
+    name: string;
+    intro: string;
 }
 
 // Mock repository
-export const card_member = [
+export const card_member : CardMember[] = [
   {
-    id: "member-1",
+    id: "1",
     url_image: one,
-    message_hover: "José Silva"
+    name: "José Silva",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-2",
+    id: "2",
     url_image: two,
-    message_hover: "Maria Souza"
+    name: "Maria Souza",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-3",
+    id: "3",
     url_image: three,
-    message_hover: "Vitor Soller"
+    name: "Vitor Soller",
+    intro: `Ex-presidente da Dev Community e entusiasta de cloud computing, transformo 
+            ideias complexas em arquiteturas escaláveis na AWS. Entre um deploy e outro, garanto 
+            que o time siga as melhores práticas de desenvolvimento sem deixar a infraestrutura cair.`
   },
   {
-    id: "member-4",
+    id: "4",
     url_image: four,
-    message_hover: "Ana Clara"
+    name: "Ana Clara",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-5",
+    id: "5",
     url_image: five,
-    message_hover: "Lucas Oliveira"
+    name: "Lucas Oliveira",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-6",
+    id: "6",
     url_image: six,
-    message_hover: "Juliana Mendes"
+    name: "Juliana Mendes",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-7",
+    id: "7",
     url_image: seven,
-    message_hover: "Gabriel Santos"
+    name: "Gabriel Santos",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-8",
+    id: "8",
     url_image: eight,
-    message_hover: "Beatriz Rocha"
+    name: "Beatriz Rocha",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-9",
+    id: "9",
     url_image: nine,
-    message_hover: "Costa Felipe"
+    name: "Costa Felipe",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-10",
+    id: "10",
     url_image: ten,
-    message_hover: "Pedro Pedra"
+    name: "Pedro Pedra",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-11",
+    id: "11",
     url_image: eleven,
-    message_hover: "Carlos Eduardo"
+    name: "Carlos Eduardo",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
   {
-    id: "member-12",
+    id: "12",
     url_image: twelve,
-    message_hover: "Petra"
+    name: "Petra",
+    intro: `Minha grande paixão é o Design de Exposições e a criação de espaços 
+            imersivos. Acredito que o ambiente físico e a iluminação ditam a 
+            forma como absorvemos a arte e a informação. Apresento meus estudos 
+            e projetos de cenografia, que vão desde o planejamento de galerias 
+            de arte minimalistas até a ideação de instalações interativas, 
+            projeções sensoriais e arquitetura efêmera. Meu objetivo é projetar 
+            narrativas espaciais que conectem o público à obra de forma profunda 
+            e inesquecível.`
   },
 ];
