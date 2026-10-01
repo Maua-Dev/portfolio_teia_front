@@ -4,7 +4,7 @@ import { FaInstagram } from 'react-icons/fa';
 
 export default function Contact() {
   return (
-    <main className='px-20 py-5'>
+    <main className='px-20 py-5 mb-[100px]'>
       {/* Contact Info & Map Section */}
       <section className="flex gap-10 justify-center">
         <section className="grid grid-col w-1/3 gap-2">

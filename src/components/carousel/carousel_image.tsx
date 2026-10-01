@@ -18,7 +18,7 @@ export default function Carousel_Image() {
   }
 
   return (
-    <div className=" relative w-[97%] mx-auto mt-6">
+    <div className="relative mx-auto mt-6">
       <div className="aspect-[40/9] overflow-hidden rounded-lg">
         <img
           src={slides[current]}
