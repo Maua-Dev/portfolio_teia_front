@@ -1,97 +1,65 @@
-import { useParams } from 'react-router-dom';
-import { User, Tag } from 'lucide-react';
-import { card_picture } from '../../src/data/card_picture_mock';
+import { card_picture, type CardPictureItem } from '../../src/data/card_picture_mock';
+import { useParams } from "react-router-dom"
+import { FaRegUser } from "react-icons/fa6";
+import { LuTag } from "react-icons/lu";  
 
 export default function ProjectPage() {
-  const { id } = useParams<{ id: string }>();
-  const project = card_picture.find((item) => item.id === id);
 
-  if (!project) {
-    return (
-      <main className="flex items-center justify-center h-screen">
-        <p className="text-gray-500 font-overpass">Projeto não encontrado.</p>
-      </main>
+    const { id } = useParams<{ id: string }>();
+
+    const  project : CardPictureItem = card_picture.find((proj) => proj.id === id) || card_picture[0]; 
+    const [frstimg, ...lstimg] = project.obras
+    return(
+        <main className='flex flex-col items-center'> 
+            <figure className='w-[95%] mt-10 h-120 rounded-3xl '> 
+                <img
+                    src={project.url_cover}
+                    alt={project.name}
+                    className="w-full h-120 rounded-3xl object-cover "
+                />
+
+            </figure>
+            <section className='flex justify-center mt-10'>
+                <figure className='w-140 m-10 rounded-4xl object-cover h-170 overflow-hidden'>
+                    <img src={frstimg}
+                    alt={"Primeira Obra"}
+                    className='w-full h-full'
+                    />
+                </figure>
+                <article className='flex flex-col'>
+                    <h1 className=' w-210 h-auto text-[100px] mt-20 font-bold'> {project.titulo}</h1>
+                    <div className='overflow-y-auto h-auto mb-10 shadow-xl p-4 rounded-3xl'>
+                        <h2 className=' w-200 h-auto '>{project.texto}</h2>
+                    </div>
+                </article>
+            </section>
+            <section className='flex flex-col mt-10'>
+                {lstimg.map((obras) =>(
+                    <img
+                        src={obras}
+                        className='m-5 rounded-3xl overflow-hidden '
+                    ></img>
+                    
+                ))}
+            </section>
+            <section className='w-250 flex flex-wrap  mb-20'>
+                {project.author.map((autores) =>(
+                    <div className='shadow-3xl flex justify-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 w-auto h-8'>
+                        <FaRegUser />
+                        {autores}
+                    </div>
+                    
+                ))}
+                {project.categorias.map((cat) =>(
+                    <div className='shadow-3xl flex justify-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 w-auto h-8'>
+                        <LuTag />
+                        {cat}
+                    </div>
+                    
+                ))}
+            </section> 
+
+        </main>
+
     );
-  }
-
-  const { capa, obras, titulo, texto, author, categorias } = project;
-  const [primeiraObra, ...restoObras] = obras;
-
-  return (
-    <main className="flex flex-col gap-10 max-w-5xl mx-auto px-6 py-10">
-
-      {/* Capa */}
-      <figure className="w-full">
-        <img
-          src={capa}
-          alt={`Capa do projeto ${titulo}`}
-          className="w-full h-[420px] object-cover rounded-3xl"
-        />
-      </figure>
-
-      {/* Primeira obra + título/texto lado a lado */}
-      <article className="flex flex-wrap gap-8 items-start">
-        <figure className="flex-1 min-w-[280px]">
-          <img
-            src={primeiraObra}
-            alt={titulo}
-            className="w-full h-[360px] object-cover rounded-2xl"
-          />
-        </figure>
-
-        <section className="flex-1 min-w-[280px] flex flex-col gap-4">
-          <p className="text-6xl font-bold font-overpass text-gray-900">
-            {titulo}
-          </p>
-          <p className="text-base font-overpass text-gray-700 leading-relaxed">
-            {texto}
-          </p>
-        </section>
-      </article>
-
-      {/* Resto das obras, centralizadas, uma embaixo da outra */}
-      {restoObras.length > 0 && (
-        <div className="flex flex-col items-center gap-6">
-          {restoObras.map((obra, index) => (
-            <img
-              key={index}
-              src={obra}
-              alt={`${titulo} - obra ${index + 2}`}
-              className="w-full max-w-3xl h-[380px] object-cover rounded-2xl"
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Tags de autores */}
-      <div className="flex flex-wrap gap-3">
-        {author.map((nome, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 bg-gray-50"
-          >
-            <User size={16} className="text-gray-600" />
-            <span className="text-sm font-overpass font-medium text-gray-800">
-              {nome}
-            </span>
-          </div>
-        ))}
-      </div>
-
-      {/* Tags de categorias */}
-      <div className="flex flex-wrap gap-3">
-        {categorias.map((cat, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 bg-gray-50"
-          >
-            <Tag size={16} className="text-gray-600" />
-            <span className="text-sm font-overpass font-medium text-gray-800">
-              {cat}
-            </span>
-          </div>
-        ))}
-      </div>
-    </main>
-  );
 }

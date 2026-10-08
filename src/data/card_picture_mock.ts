@@ -12,17 +12,18 @@ import slipigirl from "../assets/test_carousel/slipigirl.jpg"
 import dnsrmans from "../assets/test_carousel/dnsrmans.jpg"
 import crmodoc from "../assets/test_carousel/crmodoc.jpg"
 import bydrvr from "../assets/test_carousel/bydrvr.jpg"
-
+import radwzrd from "../assets/test_carousel/radwzrd.jpg"
+import grlas from "../assets/test_carousel/grlas.jpg"
+import ancintciv from "../assets/test_carousel/ancintciv.jpg"
 
 
 /* Interface */
 export interface CardPictureItem {
   id: string;
-  url_image: string;
-  message_hover: string;
+  url_cover: string;
+  name: string;
   categorias: string[];
   ano: string;
-  capa: string;
   obras: string[]; 
   titulo: string;
   texto: string;
@@ -34,96 +35,88 @@ export interface CardPictureItem {
 export const card_picture: CardPictureItem[] = [
   {
     id: "picture-1",
-    url_image: borrado,
-    message_hover: "Feira de Tecidos",
+    url_cover: borrado,
+    name: "Feira de Tecidos",
     categorias: ["Paisagem", "Natureza"],
     ano: "2025-06-15",
-    capa: borrado,
-    obras: [],
+    obras: [bydrvr],
     titulo: "Feira de Tecidos: Sentir no tato as memórias de outras vidas",
     texto: "No dia a dia, as pessoas se afastam de suas origen e se tornam indiferentes com a história a sua votla diante da pressão do cotidiano, a Feira de Tecidos é um projeto focado em trazer de volta as pessoas perdidas em suas rotinas ao mundo da arte e da celebração de diversas culturas por meio da exibição feita pelo grupo de alunos, que achou por meio de tecidos a forma mais unica conquistar e conversar com o público.",
     author: ["José Silva", "Vitor Soller"],
   },
   {
     id: "picture-2",
-    url_image: feira_de_artes,
-    message_hover: "Cidade de Noite",
+    url_cover: feira_de_artes,
+    name: "Cidade de Noite",
     categorias: ["Urbano", "Fotografia"],
     ano: "2026-01-10",
-    capa: feira_de_artes,
-    obras: [],  
+    obras: [crmodoc],  
     titulo: "Cidade de Noite",
     texto: "A cidade de noite é um cenário vibrante e dinâmico, onde a luz e a sombra se entrelaçam para criar uma atmosfera única. Este projeto explora a essência da vida urbana através de retratos que capturam a essência da cidade em suas horas mais intensas.",
     author: ["José Silva", "Vitor Soller"],
   },
   {
     id: "picture-3",
-    url_image: luz,
-    message_hover: "Montanhas Nevadas",
+    url_cover: luz,
+    name: "Montanhas Nevadas",
     categorias: ["Paisagem", "Inverno"],
     ano: "2024-12-25",
-    capa: slipigirl,
-    obras: [sleepyernie, dnsrmans, crmodoc, bydrvr], 
+    obras: [sleepyernie, dnsrmans, crmodoc, bydrvr, ancintciv, grlas, slipigirl, radwzrd], 
     titulo: "Montanhas Nevadas",
     texto: "As montanhas nevadas são um espetáculo da natureza, oferecendo vistas deslumbrantes e uma sensação de tranquilidade. Este projeto captura a beleza serena das montanhas cobertas de neve, destacando a majestade e a grandiosidade do inverno.",
     author: ["Vitor Soller", "Lucas Oliveira", "Gabriel Santos"],
   },
   {
     id: "picture-4",
-    url_image: museu,
-    message_hover: "Abstrato Moderno",
+    url_cover: museu,
+    name: "Abstrato Moderno",
     categorias: ["Abstrato", "Pintura"],
     ano: "2025-03-20",
-    capa: museu,
-    obras: [],
+    obras: [radwzrd],
     titulo: "Abstrato Moderno",
     texto: "O Abstrato Moderno é uma expressão artística que desafia as convenções tradicionais da pintura. Este projeto explora formas, cores e texturas de maneira inovadora, convidando o espectador a interpretar e se conectar com a obra de uma forma pessoal e única.",
     author: ["José Silva", "Vitor Soller", "Lucas Oliveira", "Gabriel Santos"],
   },
   {
     id: "picture-5",
-    url_image: museu2,
-    message_hover: "O Abraço da Natureza",
+    url_cover: museu2,
+    name: "O Abraço da Natureza",
     categorias: ["Fotografia", "Retrato"],
     ano: "2025-08-12",
-    capa: museu2,
-    obras: [],
+    obras: [grlas],
     titulo: "O Abraço da Natureza",
     texto: "O Abraço da Natureza é um projeto fotográfico que captura momentos íntimos entre seres humanos e o ambiente natural. Através de retratos sensíveis, este trabalho busca transmitir a conexão profunda e o respeito que devemos ter pela natureza.",
     author: ["Vitor Soller", "Ana Clara", "Juliana Mendes", "Pedro Pedra", "José Silva"],
   },
   {
     id: "picture-6",
-    url_image: quadros,
-    message_hover: "Texturas de Rust",
+    url_cover: quadros,
+    name: "Texturas de Rust",
     categorias: ["Abstrato", "Conceitual"],
     ano: "2026-02-04",
-    capa: quadros,
-    obras: [],
+    obras: [dnsrmans],
     titulo: "Texturas de Rust",
     texto: "Texturas de Rust é um projeto que explora a beleza encontrada na deterioração e no desgaste. Através de fotografias e pinturas, este trabalho destaca as texturas únicas e os padrões que surgem com o tempo, celebrando a estética do envelhecimento e da imperfeição.",
     author: ["Vitor Soller", "Ana Clara", "Juliana Mendes", "Costa Felipe", "Petra"],
   },
   {
     id: "picture-7",
-    url_image: riscado,
-    message_hover: "O Guardião da Floresta",
+    url_cover: riscado,
+    name: "O Guardião da Floresta",
     categorias: ["Natureza", "Minimalista", "Juliana Mendes", "Costa Felipe"],
     ano: "2024-10-30",
-    capa: riscado,
-    obras: [],
+    obras: [slipigirl],
     titulo: "O Guardião da Floresta",
     texto: "O Guardião da Floresta é um projeto que busca sensibilizar o público sobre a importância da preservação ambiental. Através de ilustrações minimalistas e fotografias, este trabalho destaca a beleza e a fragilidade das florestas, incentivando a conscientização e a ação em prol do meio ambiente.",
     author: ["Maria Souza", "Vitor Soller", "Lucas Oliveira", "Beatriz Rocha"],
   },
   {
     id: "picture-8",
-    url_image: verde,
-    message_hover: "Caminho das Águas",
+    url_cover: verde,
+    name: "Caminho das Águas",
     categorias: ["Paisagem", "Fotografia"],
     ano: "2025-11-14",
-    capa: verde,
-    obras: [],
+    obras: [ancintciv],
     titulo: "Caminho das Águas",
     texto: "Caminho das Águas é um projeto fotográfico que explora a beleza e a diversidade dos cursos d'água ao redor do mundo. Através de imagens capturadas em diferentes regiões, este trabalho busca transmitir a importância da água para a vida e a necessidade de sua preservação.",
     author: ["Maria Souza", "Vitor Soller", "Ana Clara", "Beatriz Rocha", "Carlos Eduardo"],

@@ -48,8 +48,8 @@ export default function CardPictureLayout({ memberName }: CardPictureFilterLayou
         >
           {/* Main image */}
           <img 
-            src={picture.url_image} 
-            alt={picture.message_hover} 
+            src={picture.url_cover} 
+            alt={picture.name} 
             className="w-full h-full object-cover rounded-3xl"
           />
 
@@ -58,7 +58,7 @@ export default function CardPictureLayout({ memberName }: CardPictureFilterLayou
             className={`absolute bottom-0 inset-x-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${card_style.GlassEffect}`}
           >
             <p className="font-overpass text-gray-900 font-bold text-base">
-              {picture.message_hover}
+              {picture.name}
             </p>
           </div>
         </div>
