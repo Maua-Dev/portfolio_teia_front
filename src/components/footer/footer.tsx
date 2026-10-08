@@ -29,7 +29,7 @@ export default function Footer(){
                         <img 
                             src={logo_teia} 
                             alt="logo_teia_criativa" 
-                            onClick={() => navigate("/")} 
+                            onClick={() => {navigate("/"); window.scrollTo(0, 0);}} 
                             className="cursor-pointer h-24 w-auto object-contain transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
                         />
                     </div>
@@ -39,10 +39,10 @@ export default function Footer(){
                 {/* Coluna 2: Navegação */}
                 <div className="flex flex-col gap-2 px-6 w-[15%] shrink-0">
                     <h4 className="font-overpass font-bold mb-1">Navegação</h4>
-                    <span onClick={() => navigate("/")} className="cursor-pointer font-overpass duration-300 ease-in-out hover:text-white hover:-translate-y-1 hover:scale-110 text-xs">Home</span>
-                    <span onClick={() => navigate("/members")} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Membros</span>
-                    <span onClick={() => navigate("/about")} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Sobre Nós</span>
-                    <span onClick={() => navigate("/contact")} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Contato</span>
+                    <span onClick={() => {navigate("/"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass duration-300 ease-in-out hover:text-white hover:-translate-y-1 hover:scale-110 text-xs">Home</span>
+                    <span onClick={() => {navigate("/members"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Membros</span>
+                    <span onClick={() => {navigate("/about"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Sobre Nós</span>
+                    <span onClick={() => { navigate("/contact"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Contato</span>
                 </div>
 
                 {/* Coluna 3: Contato */}
