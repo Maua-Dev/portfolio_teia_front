@@ -20,16 +20,16 @@ export default function ProjectPage() {
 
             </figure>
             <section className='flex justify-center mt-10'>
-                <figure className='w-140 m-10 rounded-4xl object-cover h-170 overflow-hidden'>
+                <figure className='w-140 m-10 rounded-4xl object-cover h-150 overflow-hidden'>
                     <img src={frstimg}
                     alt={"Primeira Obra"}
                     className='w-full h-full'
                     />
                 </figure>
                 <article className='flex flex-col'>
-                    <h1 className=' w-210 h-auto text-[100px] mt-20 font-bold'> {project.titulo}</h1>
+                    <h1 className=' w-140 h-auto text-[100px] mt-20 font-bold'> {project.titulo}</h1>
                     <div className='overflow-y-auto h-auto mb-10 shadow-xl p-4 rounded-3xl'>
-                        <h2 className=' w-200 h-auto '>{project.texto}</h2>
+                        <h2 className=' w-120 h-auto '>{project.texto}</h2>
                     </div>
                 </article>
             </section>
