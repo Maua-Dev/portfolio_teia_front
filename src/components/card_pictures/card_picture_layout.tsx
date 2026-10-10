@@ -57,7 +57,7 @@ export default function CardPictureLayout({ memberName }: CardPictureFilterLayou
           <div 
             className={`absolute bottom-0 inset-x-0 p-5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${card_style.GlassEffect}`}
           >
-            <p className="font-overpass text-gray-900 font-bold text-base">
+            <p className="text-gray-900 font-bold text-base">
               {picture.name}
             </p>
           </div>

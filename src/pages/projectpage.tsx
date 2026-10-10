@@ -10,7 +10,7 @@ export default function ProjectPage() {
     const  project : CardPictureItem = card_picture.find((proj) => proj.id === id) || card_picture[0]; 
     const [frstimg, ...lstimg] = project.obras
     return(
-        <main className='flex flex-col items-center'> 
+        <main className='flex flex-col items-center px-20 py-5 mb-[100px]'> 
             <figure className='w-[95%] mt-10 h-120 rounded-3xl '> 
                 <img
                     src={project.url_cover}
@@ -20,16 +20,16 @@ export default function ProjectPage() {
 
             </figure>
             <section className='flex justify-center mt-10'>
-                <figure className='w-140 m-10 rounded-4xl object-cover h-150 overflow-hidden'>
+                <figure className='w-2/5 m-10 rounded-4xl object-cover h-150 overflow-hidden'>
                     <img src={frstimg}
-                    alt={"Primeira Obra"}
+                    alt={"Primeira Obra"} 
                     className='w-full h-full'
                     />
                 </figure>
-                <article className='flex flex-col'>
-                    <h1 className=' w-140 h-auto text-[100px] mt-20 font-bold'> {project.titulo}</h1>
-                    <div className='overflow-y-auto h-auto mb-10 shadow-xl p-4 rounded-3xl'>
-                        <h2 className=' w-120 h-auto '>{project.texto}</h2>
+                <article className='w-3/5 flex flex-col'>
+                    <h1 className='mt-20'> {project.titulo}</h1>
+                    <div className='overflow-y-auto mb-10 shadow-xl p-4 rounded-3xl'>
+                        <p>{project.texto}</p>
                     </div>
                 </article>
             </section>
@@ -44,14 +44,14 @@ export default function ProjectPage() {
             </section>
             <section className='w-250 flex flex-wrap  mb-20'>
                 {project.author.map((autores) =>(
-                    <div className='shadow-3xl flex justify-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 w-auto h-8'>
+                    <div className='shadow-3xl flex items-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 h-8'>
                         <FaRegUser />
                         {autores}
                     </div>
                     
                 ))}
                 {project.categorias.map((cat) =>(
-                    <div className='shadow-3xl flex justify-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 w-auto h-8'>
+                    <div className='font-(family-name: --font-work-sans) shadow-3xl flex items-center text-center font-bold rounded-4xl border-2 gap-2 border-gray-400 border-solid mt-10 mr-10 px-2 py-1 h-8'>
                         <LuTag />
                         {cat}
                     </div>

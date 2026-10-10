@@ -33,12 +33,12 @@ export default function Footer(){
                             className="cursor-pointer h-24 w-auto object-contain transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
                         />
                     </div>
-                    <p className="font-overpass text-xs mt-2">Teia Criativa - Portifólio</p>
+                    <h2 className="text-[20px] mt-2">Teia Criativa - Portifólio</h2>
                 </div>
 
                 {/* Coluna 2: Navegação */}
                 <div className="flex flex-col gap-2 px-6 w-[15%] shrink-0">
-                    <h4 className="font-overpass font-bold mb-1">Navegação</h4>
+                    <h2 className="mb-1">Navegação</h2>
                     <span onClick={() => {navigate("/"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass duration-300 ease-in-out hover:text-white hover:-translate-y-1 hover:scale-110 text-xs">Home</span>
                     <span onClick={() => {navigate("/members"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Membros</span>
                     <span onClick={() => {navigate("/about"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Sobre Nós</span>
@@ -47,18 +47,18 @@ export default function Footer(){
 
                 {/* Coluna 3: Contato */}
                 <div className="flex flex-col gap-2 px-6 w-[22%] shrink-0">
-                    <h4 className="font-overpass font-bold mb-1">Contato</h4>
+                    <h2 className="mb-1">Contato</h2>
                     <span className="font-overpass text-xs select-all">teiacriativa.maua@gmail.com</span>
                     <span className="font-overpass text-xs select-all">teiacriativa.maua</span>
                 </div>
 
                 {/* Coluna 4: Endereço */}
                 <div className="flex flex-col gap-2 px-6 w-[25%] shrink-0">
-                    <h4 className="font-overpass font-bold mb-1">Endereço</h4>
-                    <span className="font-overpass text-xs select-all leading-relaxed">
+                    <h2 className="mb-1">Endereço</h2>
+                    <p className="text-xs select-all leading-relaxed">
                         Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
-                    </span>
-                    <span className="font-overpass text-xs">Seg - Sex, 9h ás 18h</span>
+                    </p>
+                    <span className="text-xs">Seg - Sex, 9h ás 18h</span>
                 </div>
 
                 {/* Coluna 5: Mapa (Com a barrinha divisória restaurada à esquerda) */}

@@ -12,7 +12,7 @@ export default function Contact() {
 
           <h2>Onde nos encontrar</h2>
 
-          <p className="font-overpass text-[#757575] text-[17px]">
+          <p className="text-[#757575]">
             Instituto Maua de Tecnologia<br />
             Praça Mauá, 1 - Mauá, São Caetano do Sul - SP,<br />
             09580-900
@@ -20,7 +20,7 @@ export default function Contact() {
 
           <div className="flex gap-2 items-center">
             <Phone size={28} color='green'/>
-            <p className='font-overpass text-[#757575] overpass-align'>+55 11 87455-3456</p>
+            <p className='text-[#757575]'>+55 11 87455-3456</p>
           </div>
 
           <a href="https://www.instagram.com/teiacriativa.maua/"
@@ -28,7 +28,7 @@ export default function Contact() {
             className='flex gap-2 items-center'
           >
             <FaInstagram size={30} color="#E1306C"/>
-            <p className="font-overpass text-[#757575] font-bold overpass-align">teiacriativa.maua</p>
+            <p className="text-[#757575] font-bold">teiacriativa.maua</p>
           </a>                  
         </section>
 

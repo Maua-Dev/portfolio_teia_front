@@ -6,15 +6,10 @@
 
 /* Overpass Font - Regular */
 @font-face {
-    font-family: "Overpass";
-    src: url("./assets/fonts/Overpass-Regular.ttf") format("truetype");
+    font-family: "Work Sans";
+    src: url("./assets/fonts/WorkSans-VariableFont_wght.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;   
-
-    /* Fix whitespace issues in Overpass font based on font TTF */
-    ascent-override: 88.3%;
-    descent-override: 38.3%;
-    line-gap-override: 0%; 
 }
 
 /* Martel Sans Font - Bold */
@@ -37,33 +32,30 @@
 /*                  Font Variables                    */
 /* -------------------------------------------------- */
 @theme {
-    --font-overpass: "Overpass", sans-serif;
-    --font-martelSans: "Martel Sans", sans-serif;
+    --font-martel-sans: "Martel Sans", sans-serif;
     --font-hind: "Hind", sans-serif;
+    --font-work-sans: "Work Sans", sans-serif;
 }
 
-/* Fine-tune vertical alignment for Overpass when paired with icons */
-.overpass-align {
-  line-height: 1;
-  position: relative;
-  top: 3px;
-}
 
 @layer base {
     h1 {
-        font-family: 'Martel Sans', sans-serif;
+        font-family: var(--font-martel-sans), sans-serif;
         font-weight: bold;
         font-size: 60px;
     }
 
     h2 {
-        font-family: 'Hind', sans-serif;
+        font-family: var(--font-hind), sans-serif;
         font-weight: 400;
         font-size: 35px;
         font-style: normal;
     }
 
     p {
+        font-family: var(--font-work-sans), sans-serif;
         font-size: 23px;
+        font-style: normal;
     }
+    
 }
