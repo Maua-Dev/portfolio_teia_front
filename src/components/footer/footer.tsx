@@ -15,13 +15,8 @@ export default function Footer(){
                 backgroundRepeat: "no-repeat",
             }}
         >
-            {/* * Flex container with divide-x restored exactly as the Figma design.
-              * We use shrink-0 on columns to completely protect them from compressing.
-              */}
-            <div className="flex mt-4 items-stretch divide-x divide-white/50 px-10 py-5 w-full justify-between">
-                
-                {/* Coluna 1: Logo */}
-                <div className="flex flex-col justify-center gap-2 pr-5 w-[20%] shrink-0">
+            <div className="flex divide-x divide-white/40 mt-4 items-stretch px-10 py-5 w-full justify-between">
+                <div className="flex flex-col justify-center gap-2 pr-6 w-[22%] shrink-0">
                     <div 
                         onClick={() => navigate("/")} 
                         className="flex items-center gap-3 cursor-pointer"
@@ -30,30 +25,30 @@ export default function Footer(){
                             src={logo_teia} 
                             alt="logo_teia_criativa" 
                             onClick={() => {navigate("/"); window.scrollTo(0, 0);}} 
-                            className="cursor-pointer h-24 w-auto object-contain transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
+                            className="cursor-pointer h-24 object-contain transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-105"
                         />
                     </div>
                     <h2 className="text-[20px] mt-2">Teia Criativa - Portifólio</h2>
                 </div>
 
-                {/* Coluna 2: Navegação */}
-                <div className="flex flex-col gap-2 px-6 w-[15%] shrink-0">
+                {/* Column 2: Navegation */}
+                <div className="flex flex-col gap-2 pl-6 w-[16%] shrink-0">
                     <h2 className="mb-1">Navegação</h2>
-                    <span onClick={() => {navigate("/"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass duration-300 ease-in-out hover:text-white hover:-translate-y-1 hover:scale-110 text-xs">Home</span>
-                    <span onClick={() => {navigate("/members"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Membros</span>
-                    <span onClick={() => {navigate("/about"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Sobre Nós</span>
-                    <span onClick={() => { navigate("/contact"); window.scrollTo(0, 0);}} className="cursor-pointer font-overpass transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Contato</span>
+                    <span onClick={() => {navigate("/"); window.scrollTo(0, 0);}} className="cursor-pointer font-work-sans duration-300 ease-in-out hover:text-white hover:-translate-y-1 hover:scale-110 text-xs">Home</span>
+                    <span onClick={() => {navigate("/members"); window.scrollTo(0, 0);}} className="cursor-pointer font-work-sans transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Membros</span>
+                    <span onClick={() => {navigate("/about"); window.scrollTo(0, 0);}} className="cursor-pointer font-work-sans transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Sobre Nós</span>
+                    <span onClick={() => { navigate("/contact"); window.scrollTo(0, 0);}} className="cursor-pointer font-work-sans transition duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-xs">Contato</span>
                 </div>
 
-                {/* Coluna 3: Contato */}
-                <div className="flex flex-col gap-2 px-6 w-[22%] shrink-0">
+                {/* Column 3: Contact */}
+                <div className="flex flex-col gap-2 pl-6 w-[22%] shrink-0">
                     <h2 className="mb-1">Contato</h2>
-                    <span className="font-overpass text-xs select-all">teiacriativa.maua@gmail.com</span>
-                    <span className="font-overpass text-xs select-all">teiacriativa.maua</span>
+                    <span className="font-work-sans text-xs select-all">teiacriativa.maua@gmail.com</span>
+                    <span className="font-work-sans text-xs select-all">teiacriativa.maua</span>
                 </div>
 
-                {/* Coluna 4: Endereço */}
-                <div className="flex flex-col gap-2 px-6 w-[25%] shrink-0">
+                {/* Column 4: Address */}
+                <div className="flex flex-col gap-2 pl-6 w-[22%] shrink-0">
                     <h2 className="mb-1">Endereço</h2>
                     <p className="text-xs select-all leading-relaxed">
                         Praça Mauá, 1 - Mauá, São Caetano do Sul - SP, 09580-900
@@ -61,8 +56,8 @@ export default function Footer(){
                     <span className="text-xs">Seg - Sex, 9h ás 18h</span>
                 </div>
 
-                {/* Coluna 5: Mapa (Com a barrinha divisória restaurada à esquerda) */}
-                <div className="pl-6 flex items-center justify-center w-[18%] shrink-0">
+                {/* Column 5: Map */}
+                <div className="flex items-center justify-center pl-6 w-[18%] shrink-0">
                     <iframe
                         title="mapa"
                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2532.5964419798634!2d-46.57539064738934!3d-23.64876780103283!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce434992a4cad7%3A0x75aa65b7b5099c2!2sInstituto%20Mau%C3%A1%20de%20Tecnologia!5e0!3m2!1spt-BR!2sus!4v1783026731096!5m2!1spt-BR!2sus"
@@ -71,12 +66,12 @@ export default function Footer(){
                 </div>
             </div>
 
-            {/* Linha divisória horizontal inferior */}
+            {/* Bottom horizontal dividing line */}
             <div className="border-t border-white/40 mx-10" />
 
             {/* Copyright */}
             <div className="text-center py-3">
-                <p className="font-overpass text-xs">
+                <p className="text-xs">
                     @2026 Teia Criativa | Todos os direitos reservados
                 </p>
             </div>
